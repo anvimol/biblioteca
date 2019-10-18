@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Sistema Biblioteca
+                    Sistema Biblioteca Laravel
                 </div>
 
                 <div class="links">
