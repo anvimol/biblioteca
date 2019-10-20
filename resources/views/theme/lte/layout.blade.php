@@ -3,7 +3,7 @@
     <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>AdminLTE 2 | Boxed Layout</title>
+    <title>@yield('titulo', 'Biblioteca') | tutorialesvirtuales</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.7 -->
@@ -18,6 +18,9 @@
         folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="{{ asset('assets/lte/dist/css/skins/_all-skins.min.css') }}">
 
+    <link rel="stylesheet" href="{{ asset('assets/css/custom.css') }}">
+
+    @yield('styles')
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -41,20 +44,8 @@
 
             <div class="content-wrapper">
                 <section class="content">
-                    <div class="callout callout-info">
-                        <h4>Tip!</h4>
-                https://www.deezer.com/album/75345632?utm_source=deezer&utm_content=album-75345632&utm_term=1609367502_1571477368&utm_medium=web
-                
-                            <div class="box-tools pull-right">
-                            <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
-                                <i class="fa fa-minus"></i></button>
-                            </div>
-                        </div>
-                        <div class="box-body">
-                            Start creating your amazing application!
-                        </div>
-                        <!-- /.box-body -->
-                    </div>
+                    @yield('contenido')
+                    
                 </section>
             </div>
             {{-- Inicio footer --}}
@@ -70,7 +61,7 @@
         <script src="{{ asset('assets/lte/bower_components/fastclick/lib/fastclick.js') }}"></script>
         <!-- AdminLTE App -->
         <script src="{{ asset('assets/lte/dist/js/adminlte.min.js') }}"></script>
-        <!-- AdminLTE for demo purposes -->
-        <script src="{{ asset('assets/lte/dist/js/demo.js') }}"></script>
+
+        @yield('scripts')
     </body>
 </html>

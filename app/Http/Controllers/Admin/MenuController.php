@@ -1,19 +1,22 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Models\Admin\Menu;
+use App\Http\Requests\ValidacionMenu;
 
-class PermisoController extends Controller
+class MenuController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($nombre)
+    public function index()
     {
-        return view('permiso', compact('nombre'));
+        //
     }
 
     /**
@@ -23,7 +26,7 @@ class PermisoController extends Controller
      */
     public function create()
     {
-        return 'Paginan crear';
+        return view('admin.menu.create');
     }
 
     /**
@@ -32,9 +35,10 @@ class PermisoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ValidacionMenu $request)
     {
-        //
+        Menu::create($request->all());
+        redirect('admin/menu/create')->with('mensaje', 'Menú creado con exito');
     }
 
     /**
