@@ -38,7 +38,7 @@ class MenuController extends Controller
     public function store(ValidacionMenu $request)
     {
         Menu::create($request->all());
-        redirect('admin/menu/create')->with('mensaje', 'Menú creado con exito');
+        return redirect('admin/menu/create')->with('mensaje', 'Menú creado con exito');
     }
 
     /**
@@ -72,7 +72,7 @@ class MenuController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        return redirect('admin/menu')->with('mensaje', 'Menú actualizado con exito');
     }
 
     /**
