@@ -1,7 +1,7 @@
 /node_modules
 /public/hot
 /public/storage
-/public/assets/Lte
+/public/assets/lte
 /storage/*.key
 /vendor
 .env
